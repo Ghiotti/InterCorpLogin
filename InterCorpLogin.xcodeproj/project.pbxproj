@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8D1F5C07216F35C167480AA0 /* Pods_InterCorpLoginTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C45F5FDA401CD838FC732C /* Pods_InterCorpLoginTests.framework */; };
 		974944252116DEF7DAC9584E /* Pods_InterCorpLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 012BC79222168BCB82268130 /* Pods_InterCorpLogin.framework */; };
+		A875571022CFDEA4003B8E12 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875570F22CFDEA4003B8E12 /* LoginViewController.swift */; };
+		A875571322CFE22E003B8E12 /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875571222CFE22E003B8E12 /* AppLogger.swift */; };
 		A8C620DB22CF956900DFEF2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C620DA22CF956900DFEF2A /* AppDelegate.swift */; };
 		A8C620DD22CF956900DFEF2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C620DC22CF956900DFEF2A /* ViewController.swift */; };
 		A8C620E022CF956900DFEF2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8C620DE22CF956900DFEF2A /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 		5113BBE355E73B17A2D482CF /* Pods-InterCorpLoginTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterCorpLoginTests.debug.xcconfig"; path = "Target Support Files/Pods-InterCorpLoginTests/Pods-InterCorpLoginTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E1A5C27A8D75F943A10194E /* Pods-InterCorpLogin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterCorpLogin.release.xcconfig"; path = "Target Support Files/Pods-InterCorpLogin/Pods-InterCorpLogin.release.xcconfig"; sourceTree = "<group>"; };
 		9C19024F9E667D11E038A564 /* Pods-InterCorpLoginUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterCorpLoginUITests.debug.xcconfig"; path = "Target Support Files/Pods-InterCorpLoginUITests/Pods-InterCorpLoginUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A875570F22CFDEA4003B8E12 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A875571222CFE22E003B8E12 /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
 		A8C620D722CF956900DFEF2A /* InterCorpLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterCorpLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8C620DA22CF956900DFEF2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8C620DC22CF956900DFEF2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +116,45 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A875570B22CFDDDA003B8E12 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A875570C22CFDE17003B8E12 /* Login */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		A875570C22CFDE17003B8E12 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A875570E22CFDE78003B8E12 /* ViewController */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A875570D22CFDE20003B8E12 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A875570E22CFDE78003B8E12 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A875570F22CFDEA4003B8E12 /* LoginViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A875571122CFE1F9003B8E12 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A875571222CFE22E003B8E12 /* AppLogger.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		A8C620CE22CF956900DFEF2A = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +180,9 @@
 		A8C620D922CF956900DFEF2A /* InterCorpLogin */ = {
 			isa = PBXGroup;
 			children = (
+				A875571122CFE1F9003B8E12 /* Utils */,
+				A875570D22CFDE20003B8E12 /* Models */,
+				A875570B22CFDDDA003B8E12 /* Features */,
 				A8C620DA22CF956900DFEF2A /* AppDelegate.swift */,
 				A8C620DC22CF956900DFEF2A /* ViewController.swift */,
 				A8C620DE22CF956900DFEF2A /* Main.storyboard */,
@@ -404,8 +450,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A875571022CFDEA4003B8E12 /* LoginViewController.swift in Sources */,
 				A8C620DD22CF956900DFEF2A /* ViewController.swift in Sources */,
 				A8C620DB22CF956900DFEF2A /* AppDelegate.swift in Sources */,
+				A875571322CFE22E003B8E12 /* AppLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,12 +17,119 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logotipo" translatesAutoresizingMaskIntoConstraints="NO" id="fCm-80-1gC">
+                                <rect key="frame" x="30" y="214" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="1jl-yS-cue"/>
+                                    <constraint firstAttribute="width" constant="70" id="jY9-QJ-Fds"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="isotipo" translatesAutoresizingMaskIntoConstraints="NO" id="gDS-63-KgZ">
+                                <rect key="frame" x="110" y="199" width="274" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="cOT-3U-a4A"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCp-wp-sS2">
+                                <rect key="frame" x="20" y="349" width="374" height="463"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZN5-pl-SX9">
+                                        <rect key="frame" x="16" y="20" width="342" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzQ-I3-neN" customClass="FBSDKButton">
+                                        <rect key="frame" x="30" y="124" width="314" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="TvT-vT-ewy"/>
+                                        </constraints>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login with:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOr-GP-vLb">
+                                        <rect key="frame" x="16" y="70" width="342" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="lzQ-I3-neN" secondAttribute="trailing" constant="30" id="MjD-Sp-iz3"/>
+                                    <constraint firstItem="ZN5-pl-SX9" firstAttribute="leading" secondItem="hCp-wp-sS2" secondAttribute="leading" constant="16" id="UOT-3u-ISz"/>
+                                    <constraint firstItem="lzQ-I3-neN" firstAttribute="leading" secondItem="hCp-wp-sS2" secondAttribute="leading" constant="30" id="Yei-pg-tUm"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZN5-pl-SX9" secondAttribute="trailing" constant="16" id="aAe-RD-jE5"/>
+                                    <constraint firstItem="lzQ-I3-neN" firstAttribute="top" secondItem="eOr-GP-vLb" secondAttribute="bottom" constant="30" id="bJd-Bg-uoD"/>
+                                    <constraint firstAttribute="trailing" secondItem="eOr-GP-vLb" secondAttribute="trailing" constant="16" id="e4h-6o-yMr"/>
+                                    <constraint firstItem="ZN5-pl-SX9" firstAttribute="centerX" secondItem="hCp-wp-sS2" secondAttribute="centerX" id="pX0-KE-jgh"/>
+                                    <constraint firstItem="eOr-GP-vLb" firstAttribute="top" secondItem="ZN5-pl-SX9" secondAttribute="bottom" constant="20" id="rKY-Rj-YaT"/>
+                                    <constraint firstItem="ZN5-pl-SX9" firstAttribute="top" secondItem="hCp-wp-sS2" secondAttribute="top" constant="20" id="weE-vV-Y05"/>
+                                    <constraint firstItem="eOr-GP-vLb" firstAttribute="leading" secondItem="hCp-wp-sS2" secondAttribute="leading" constant="16" id="xt9-YA-IJb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.36470588235294116" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fCm-80-1gC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="170" id="4WS-z4-HB2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hCp-wp-sS2" secondAttribute="bottom" constant="50" id="8TC-tJ-dhA"/>
+                            <constraint firstItem="hCp-wp-sS2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QkH-Zz-7Wd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hCp-wp-sS2" secondAttribute="trailing" constant="20" id="TAz-F6-Xsb"/>
+                            <constraint firstItem="fCm-80-1gC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="cUZ-BJ-2P5"/>
+                            <constraint firstItem="gDS-63-KgZ" firstAttribute="leading" secondItem="fCm-80-1gC" secondAttribute="trailing" constant="10" id="eIc-eE-xrW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gDS-63-KgZ" secondAttribute="trailing" constant="30" id="nfn-st-6rM"/>
+                            <constraint firstItem="hCp-wp-sS2" firstAttribute="top" secondItem="gDS-63-KgZ" secondAttribute="bottom" constant="50" id="oAv-O6-ckF"/>
+                            <constraint firstItem="gDS-63-KgZ" firstAttribute="centerY" secondItem="fCm-80-1gC" secondAttribute="centerY" id="uEu-Yx-YY7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="L6q-mK-eFs" kind="presentation" identifier="formSegue" id="KXV-M7-hBH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="A2E-Hk-ZgJ">
+            <objects>
+                <viewController id="k02-BD-lIW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qha-JV-HrH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="sQc-hU-RQc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="29J-SQ-nKw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z3N-bX-gia" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2036.2318840579712" y="20.758928571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BQB-2x-p4B">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L6q-mK-eFs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="56R-Ti-omv">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="k02-BD-lIW" kind="relationship" relationship="rootViewController" id="bU6-Rf-ioW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AUi-4Z-OO7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1124.6376811594205" y="20.758928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="isotipo" width="78" height="20"/>
+        <image name="logotipo" width="20" height="20"/>
+    </resources>
 </document>
