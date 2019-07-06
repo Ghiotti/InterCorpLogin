@@ -4,7 +4,7 @@ use_frameworks!
 
 target 'InterCorpLogin' do
   pod 'FirebaseUI/Auth'
-  pod 'FirebaseUI/Facebook'
+  pod 'FBSDKLoginKit'
   target 'InterCorpLoginTests' do
     inherit! :search_paths
     # Pods for testing

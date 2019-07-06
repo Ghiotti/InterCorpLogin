@@ -9,5 +9,8 @@
 import Foundation
 
 protocol LoginViewControllerProtocol {
-    
+
+    func showLoader()
+
+    func hideLoader()
 }

@@ -25,9 +25,6 @@ PODS:
   - FirebaseUI/Auth (8.0.2):
     - Firebase/Auth (~> 6.0)
     - GoogleUtilities/UserDefaults
-  - FirebaseUI/Facebook (8.0.2):
-    - FBSDKLoginKit (~> 5.0)
-    - FirebaseUI/Auth
   - GoogleUtilities/AppDelegateSwizzler (6.2.1):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -47,8 +44,8 @@ PODS:
   - GTMSessionFetcher/Core (1.2.2)
 
 DEPENDENCIES:
+  - FBSDKLoginKit
   - FirebaseUI/Auth
-  - FirebaseUI/Facebook
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -73,6 +70,6 @@ SPEC CHECKSUMS:
   GoogleUtilities: c7a0b08bda3bf808be823ed151f0e28ac6866e71
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
 
-PODFILE CHECKSUM: 2157e9acf9bc73ee94d848536c8b9206790854f2
+PODFILE CHECKSUM: 630c5a1eb0d1f9698616ce1a6bc05b0893ed3117
 
-COCOAPODS: 1.7.3
+COCOAPODS: 1.6.0.beta.2

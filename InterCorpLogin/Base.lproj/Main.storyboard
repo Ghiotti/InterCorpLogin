@@ -40,34 +40,32 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzQ-I3-neN" customClass="FBSDKButton">
-                                        <rect key="frame" x="30" y="124" width="314" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="TvT-vT-ewy"/>
-                                        </constraints>
-                                        <state key="normal" title="Button">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login with:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOr-GP-vLb">
                                         <rect key="frame" x="16" y="70" width="342" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Db7-Hn-D0a" customClass="FBSDKLoginButton">
+                                        <rect key="frame" x="15" y="114" width="344" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="SsL-on-BkB"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="lzQ-I3-neN" secondAttribute="trailing" constant="30" id="MjD-Sp-iz3"/>
+                                    <constraint firstItem="Db7-Hn-D0a" firstAttribute="top" secondItem="eOr-GP-vLb" secondAttribute="bottom" constant="20" id="Anm-Ar-r9B"/>
+                                    <constraint firstAttribute="trailing" secondItem="Db7-Hn-D0a" secondAttribute="trailing" constant="15" id="R7m-ir-yG6"/>
                                     <constraint firstItem="ZN5-pl-SX9" firstAttribute="leading" secondItem="hCp-wp-sS2" secondAttribute="leading" constant="16" id="UOT-3u-ISz"/>
-                                    <constraint firstItem="lzQ-I3-neN" firstAttribute="leading" secondItem="hCp-wp-sS2" secondAttribute="leading" constant="30" id="Yei-pg-tUm"/>
                                     <constraint firstAttribute="trailing" secondItem="ZN5-pl-SX9" secondAttribute="trailing" constant="16" id="aAe-RD-jE5"/>
-                                    <constraint firstItem="lzQ-I3-neN" firstAttribute="top" secondItem="eOr-GP-vLb" secondAttribute="bottom" constant="30" id="bJd-Bg-uoD"/>
                                     <constraint firstAttribute="trailing" secondItem="eOr-GP-vLb" secondAttribute="trailing" constant="16" id="e4h-6o-yMr"/>
                                     <constraint firstItem="ZN5-pl-SX9" firstAttribute="centerX" secondItem="hCp-wp-sS2" secondAttribute="centerX" id="pX0-KE-jgh"/>
                                     <constraint firstItem="eOr-GP-vLb" firstAttribute="top" secondItem="ZN5-pl-SX9" secondAttribute="bottom" constant="20" id="rKY-Rj-YaT"/>
                                     <constraint firstItem="ZN5-pl-SX9" firstAttribute="top" secondItem="hCp-wp-sS2" secondAttribute="top" constant="20" id="weE-vV-Y05"/>
                                     <constraint firstItem="eOr-GP-vLb" firstAttribute="leading" secondItem="hCp-wp-sS2" secondAttribute="leading" constant="16" id="xt9-YA-IJb"/>
+                                    <constraint firstItem="Db7-Hn-D0a" firstAttribute="leading" secondItem="hCp-wp-sS2" secondAttribute="leading" constant="15" id="zSP-iE-0dY"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -86,7 +84,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="loginFacebookButton" destination="lzQ-I3-neN" id="FY6-Vt-Lxk"/>
+                        <outlet property="loginFacebookButton" destination="Db7-Hn-D0a" id="HFd-sU-j30"/>
+                        <outlet property="loginView" destination="hCp-wp-sS2" id="Rs0-9x-ELx"/>
                         <segue destination="L6q-mK-eFs" kind="presentation" identifier="formSegue" id="KXV-M7-hBH"/>
                     </connections>
                 </viewController>
