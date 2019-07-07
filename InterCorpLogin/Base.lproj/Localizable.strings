@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  InterCorpLogin
+
+  Created by Franco Ghiotti on 06/07/2019.
+  Copyright © 2019 Franco Ghiotti. All rights reserved.
+*/
+
+"option_accept"="Accept";
+"option_cancel"="Cancel";
+
+"option_requiered"="Rquiered";
+"personal_data_first_mame"="First Name";
+"personal_data_last_name"="Last Name";
+"personal_data_birth_date"="Birth Date";
+"personal_data_birth_age"="Age";

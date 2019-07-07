@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        hideLoader()
         if let token = AccessToken.current?.tokenString {
             showLoader()
             let credential = FacebookAuthProvider.credential(withAccessToken: token)
@@ -47,17 +48,20 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: LoginViewControllerProtocol {
+
     func showLoader() {
-        self.loginFacebookButton.isEnabled = false
-        showSpinner(onView: self.view)
+        DispatchQueue.main.async {
+            self.loginFacebookButton.isEnabled = false
+            self.showSpinner(onView: self.view)
+        }
     }
 
     func hideLoader() {
-        self.loginFacebookButton.isEnabled = true
-        removeSpinner()
+        DispatchQueue.main.async {
+            self.loginFacebookButton.isEnabled = true
+            self.removeSpinner(view: self.view)
+        }
     }
-
-
 }
 
 extension LoginViewController: LoginButtonDelegate {

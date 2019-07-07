@@ -27,7 +27,19 @@ extension UIViewController {
         vSpinner = spinnerView
     }
 
-    func removeSpinner() {
+    func removeSpinner(view: UIView? = nil) {
+        DispatchQueue.main.async {
+            if let view = view {
+                for subView in view.subviews {
+                    if subView.subviews.first as? UIActivityIndicatorView != nil {
+                        subView.removeFromSuperview()
+                    }
+                }
+
+                return
+             }
+        }
+
         DispatchQueue.main.async {
             vSpinner?.removeFromSuperview()
             vSpinner = nil

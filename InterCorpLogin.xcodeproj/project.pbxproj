@@ -22,6 +22,19 @@
 		D406072E22D10CBD00B1F05C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D406072D22D10CBD00B1F05C /* GoogleService-Info.plist */; };
 		D406073122D1186F00B1F05C /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406073022D1186F00B1F05C /* ViewControllerExtension.swift */; };
 		D406073322D126D700B1F05C /* PersonalDataFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406073222D126D600B1F05C /* PersonalDataFormViewController.swift */; };
+		D406073A22D128EA00B1F05C /* PersonalDataFormPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406073922D128EA00B1F05C /* PersonalDataFormPresenter.swift */; };
+		D406073C22D1291400B1F05C /* PersonalDataFormViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406073B22D1291400B1F05C /* PersonalDataFormViewControllerProtocol.swift */; };
+		D406073E22D129A300B1F05C /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406073D22D129A300B1F05C /* PersonModel.swift */; };
+		D406074322D12CA100B1F05C /* PersonalDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406074222D12CA100B1F05C /* PersonalDataService.swift */; };
+		D406074522D12CB400B1F05C /* PersonalDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406074422D12CB400B1F05C /* PersonalDataServiceProtocol.swift */; };
+		D406074722D130A100B1F05C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406074622D130A100B1F05C /* StringExtension.swift */; };
+		D406075222D1562500B1F05C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D406075022D1562500B1F05C /* Localizable.strings */; };
+		D406075B22D158C200B1F05C /* CalendarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406075A22D158C200B1F05C /* CalendarCellView.swift */; };
+		D406075D22D158DE00B1F05C /* CalendarCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D406075C22D158DE00B1F05C /* CalendarCellView.xib */; };
+		D406075F22D15BDC00B1F05C /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406075E22D15BDC00B1F05C /* DateExtension.swift */; };
+		D406076B22D1633E00B1F05C /* TextFieldCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406076922D1633E00B1F05C /* TextFieldCellView.swift */; };
+		D406076C22D1633E00B1F05C /* TextFieldCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D406076A22D1633E00B1F05C /* TextFieldCellView.xib */; };
+		D406076E22D251FB00B1F05C /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406076D22D251FB00B1F05C /* ColorExtension.swift */; };
 		FDCB454D71BA901167D1D9A3 /* Pods_InterCorpLoginUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD03E432842B46FA78AC306D /* Pods_InterCorpLoginUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +81,24 @@
 		D406072D22D10CBD00B1F05C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D406073022D1186F00B1F05C /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		D406073222D126D600B1F05C /* PersonalDataFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataFormViewController.swift; sourceTree = "<group>"; };
+		D406073922D128EA00B1F05C /* PersonalDataFormPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataFormPresenter.swift; sourceTree = "<group>"; };
+		D406073B22D1291400B1F05C /* PersonalDataFormViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataFormViewControllerProtocol.swift; sourceTree = "<group>"; };
+		D406073D22D129A300B1F05C /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersonModel.swift; path = InterCorpLogin/Features/PersonalDataForm/ViewController/PersonModel.swift; sourceTree = SOURCE_ROOT; };
+		D406074222D12CA100B1F05C /* PersonalDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataService.swift; sourceTree = "<group>"; };
+		D406074422D12CB400B1F05C /* PersonalDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataServiceProtocol.swift; sourceTree = "<group>"; };
+		D406074622D130A100B1F05C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		D406074B22D1558500B1F05C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		D406074C22D1558500B1F05C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		D406075122D1562500B1F05C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = InterCorpLogin/Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D406075322D1563800B1F05C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = InterCorpLogin/es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D406075722D1576E00B1F05C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		D406075822D1576F00B1F05C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		D406075A22D158C200B1F05C /* CalendarCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCellView.swift; sourceTree = "<group>"; };
+		D406075C22D158DE00B1F05C /* CalendarCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarCellView.xib; sourceTree = "<group>"; };
+		D406075E22D15BDC00B1F05C /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		D406076922D1633E00B1F05C /* TextFieldCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCellView.swift; sourceTree = "<group>"; };
+		D406076A22D1633E00B1F05C /* TextFieldCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCellView.xib; sourceTree = "<group>"; };
+		D406076D22D251FB00B1F05C /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		F5CFAA1BE6B58596C59A3536 /* Pods-InterCorpLoginTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterCorpLoginTests.release.xcconfig"; path = "Target Support Files/Pods-InterCorpLoginTests/Pods-InterCorpLoginTests.release.xcconfig"; sourceTree = "<group>"; };
 		FD03E432842B46FA78AC306D /* Pods_InterCorpLoginUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterCorpLoginUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD84651D725DB0CC51E6B6DD /* Pods-InterCorpLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterCorpLogin.debug.xcconfig"; path = "Target Support Files/Pods-InterCorpLogin/Pods-InterCorpLogin.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +176,7 @@
 		A875570D22CFDE20003B8E12 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D406073D22D129A300B1F05C /* PersonModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,6 +215,7 @@
 				A8C620D822CF956900DFEF2A /* Products */,
 				5B8706D06C424B62A01F6540 /* Pods */,
 				8E0DF0239E0B1E56CB8BEEB8 /* Frameworks */,
+				D406075022D1562500B1F05C /* Localizable.strings */,
 			);
 			sourceTree = "<group>";
 		};
@@ -203,6 +236,7 @@
 				A875571122CFE1F9003B8E12 /* Utils */,
 				A875570D22CFDE20003B8E12 /* Models */,
 				A875570B22CFDDDA003B8E12 /* Features */,
+				D406074022D12C6600B1F05C /* Services */,
 				A8C620DA22CF956900DFEF2A /* AppDelegate.swift */,
 				A8C620DE22CF956900DFEF2A /* Main.storyboard */,
 				A8C620E122CF956B00DFEF2A /* Assets.xcassets */,
@@ -235,6 +269,9 @@
 			isa = PBXGroup;
 			children = (
 				D406073022D1186F00B1F05C /* ViewControllerExtension.swift */,
+				D406074622D130A100B1F05C /* StringExtension.swift */,
+				D406075E22D15BDC00B1F05C /* DateExtension.swift */,
+				D406076D22D251FB00B1F05C /* ColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -242,6 +279,8 @@
 		D406073522D126F100B1F05C /* PersonalDataForm */ = {
 			isa = PBXGroup;
 			children = (
+				D406075922D1589D00B1F05C /* Cell */,
+				D406073822D128D500B1F05C /* Presenter */,
 				D406073622D1270600B1F05C /* ViewController */,
 			);
 			path = PersonalDataForm;
@@ -251,8 +290,45 @@
 			isa = PBXGroup;
 			children = (
 				D406073222D126D600B1F05C /* PersonalDataFormViewController.swift */,
+				D406073B22D1291400B1F05C /* PersonalDataFormViewControllerProtocol.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D406073822D128D500B1F05C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D406073922D128EA00B1F05C /* PersonalDataFormPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D406074022D12C6600B1F05C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D406074122D12C8A00B1F05C /* PersonalData */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D406074122D12C8A00B1F05C /* PersonalData */ = {
+			isa = PBXGroup;
+			children = (
+				D406074222D12CA100B1F05C /* PersonalDataService.swift */,
+				D406074422D12CB400B1F05C /* PersonalDataServiceProtocol.swift */,
+			);
+			path = PersonalData;
+			sourceTree = "<group>";
+		};
+		D406075922D1589D00B1F05C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D406076922D1633E00B1F05C /* TextFieldCellView.swift */,
+				D406076A22D1633E00B1F05C /* TextFieldCellView.xib */,
+				D406075A22D158C200B1F05C /* CalendarCellView.swift */,
+				D406075C22D158DE00B1F05C /* CalendarCellView.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,8 +420,9 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				es,
+				en,
 			);
 			mainGroup = A8C620CE22CF956900DFEF2A;
 			productRefGroup = A8C620D822CF956900DFEF2A /* Products */;
@@ -364,6 +441,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D406076C22D1633E00B1F05C /* TextFieldCellView.xib in Resources */,
+				D406075D22D158DE00B1F05C /* CalendarCellView.xib in Resources */,
+				D406075222D1562500B1F05C /* Localizable.strings in Resources */,
 				A8C620E522CF956B00DFEF2A /* LaunchScreen.storyboard in Resources */,
 				A8C620E222CF956B00DFEF2A /* Assets.xcassets in Resources */,
 				A8C620E022CF956900DFEF2A /* Main.storyboard in Resources */,
@@ -489,6 +569,10 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -498,6 +582,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -512,12 +600,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				D406073322D126D700B1F05C /* PersonalDataFormViewController.swift in Sources */,
+				D406075F22D15BDC00B1F05C /* DateExtension.swift in Sources */,
 				A875571822CFE7F9003B8E12 /* LoginViewControllerProtocol.swift in Sources */,
+				D406073E22D129A300B1F05C /* PersonModel.swift in Sources */,
 				A875571022CFDEA4003B8E12 /* LoginViewController.swift in Sources */,
+				D406074322D12CA100B1F05C /* PersonalDataService.swift in Sources */,
+				D406076E22D251FB00B1F05C /* ColorExtension.swift in Sources */,
+				D406076B22D1633E00B1F05C /* TextFieldCellView.swift in Sources */,
 				D406073122D1186F00B1F05C /* ViewControllerExtension.swift in Sources */,
+				D406073A22D128EA00B1F05C /* PersonalDataFormPresenter.swift in Sources */,
 				A8C620DB22CF956900DFEF2A /* AppDelegate.swift in Sources */,
 				A875571322CFE22E003B8E12 /* AppLogger.swift in Sources */,
+				D406073C22D1291400B1F05C /* PersonalDataFormViewControllerProtocol.swift in Sources */,
 				A875571622CFE78B003B8E12 /* LoginPresenter.swift in Sources */,
+				D406075B22D158C200B1F05C /* CalendarCellView.swift in Sources */,
+				D406074722D130A100B1F05C /* StringExtension.swift in Sources */,
+				D406074522D12CB400B1F05C /* PersonalDataServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +655,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				A8C620DF22CF956900DFEF2A /* Base */,
+				D406074B22D1558500B1F05C /* es */,
+				D406075722D1576E00B1F05C /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -565,8 +665,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				A8C620E422CF956B00DFEF2A /* Base */,
+				D406074C22D1558500B1F05C /* es */,
+				D406075822D1576F00B1F05C /* en */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D406075022D1562500B1F05C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D406075122D1562500B1F05C /* Base */,
+				D406075322D1563800B1F05C /* es */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -576,6 +687,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -637,6 +749,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
