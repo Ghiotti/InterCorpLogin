@@ -17,4 +17,8 @@ protocol PersonalDataFormViewControllerProtocol: class {
     func hideLoader()
 
     func showMessage(message: String)
+
+    func showConfimationPopUp() 
+
+    func logOut()
 }

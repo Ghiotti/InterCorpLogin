@@ -10,7 +10,13 @@
 "option_cancel"="Cancel";
 
 "option_requiered"="Rquiered";
+
 "personal_data_first_mame"="First Name";
 "personal_data_last_name"="Last Name";
 "personal_data_birth_date"="Birth Date";
 "personal_data_birth_age"="Age";
+
+"generic_error" = "An error has occurred. Please, try again later";
+"save_person_data_success"="Your person data was saved success";
+"save_person_complete_all_fields"="Please, complete all fields";
+"save_person_data_confimation"="Are you sure you want to leave? All the changes you have made will be lost";

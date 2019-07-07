@@ -45,4 +45,43 @@ extension UIViewController {
             vSpinner = nil
         }
     }
+
+    func alertView(with message: String) {
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: String(), message: message, preferredStyle: .alert)
+            let actionOk = UIAlertAction(title: "option_accept".localized(),
+                                         style: .default,
+                                         handler: nil)
+
+            alertController.addAction(actionOk)
+
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+
+    func alertView(withButtonActions message: String,
+                   actionLeftButton: @escaping () -> Void,
+                   actionRightButton: @escaping () -> Void) {
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: String(), message: message, preferredStyle: .alert)
+            let acceptAction = UIAlertAction(
+                title: "option_accept".localized(),
+                style: .default,
+                handler: { (alertAction) in
+                    actionRightButton()
+            })
+
+            let cancelAction = UIAlertAction(
+                title: "option_cancel".localized(),
+                style: .cancel,
+                handler: { (alertAction) in
+                    actionLeftButton()
+            })
+
+            alertController.addAction(acceptAction)
+            alertController.addAction(cancelAction)
+
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
 }

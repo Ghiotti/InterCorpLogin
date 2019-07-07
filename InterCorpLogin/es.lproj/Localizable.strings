@@ -15,3 +15,8 @@
 "personal_data_last_name"="Apellido";
 "personal_data_birth_date"="Fecha de nacimiento";
 "personal_data_birth_age"="Edad";
+
+"generic_error" = "Ha ocurrido un error, por favor intenta más tarde";
+"save_person_data_success"="Tus datos personales fueron guardados con éxito";
+"save_person_complete_all_fields"="Por favor, complete todos los campos";
+"save_person_data_confimation"="¿Esta seguro que quiere salir? Se perderan todos los cambios que haya realiado";

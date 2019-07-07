@@ -15,13 +15,13 @@ class PersonModel: Mappable {
     var lastName: String?
     var birthDate: String? {
         didSet {
-            NotificationCenter.default.post(name: Notification.Name("birthDateChange"), object: nil)
+            NotificationCenter.default.post(name: Notification.Name(Constants.updateEageNotificationName), object: nil)
         }
     }
 
     init(firstName: String?,
          lastName: String?,
-         dateBirth: String) {
+         dateBirth: String?) {
 
         self.firstName = firstName
         self.lastName = lastName

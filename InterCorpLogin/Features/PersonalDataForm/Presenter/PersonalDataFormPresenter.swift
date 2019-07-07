@@ -13,6 +13,7 @@ class PersonalDataFormPresenter {
     private unowned let view: PersonalDataFormViewControllerProtocol
     private let personalDataService: PersonalDataServiceProtocol
     private var personModel = PersonModel()
+    private var backUpPersonModel = PersonModel()
     private var tag = String(describing: PersonalDataFormPresenter.self)
 
     init(view: PersonalDataFormViewControllerProtocol, personalDataService: PersonalDataServiceProtocol) {
@@ -28,26 +29,33 @@ class PersonalDataFormPresenter {
             }
 
             strongSelf.personModel = personModel
+            strongSelf.backUpPersonModel = PersonModel(firstName: personModel.firstName, lastName: personModel.lastName, dateBirth: personModel.birthDate)
             strongSelf.view.hideLoader()
             strongSelf.view.refreshData()
         }, onError: { (error) in
             AppLogger.e(self.tag, "Error when try get PersonModel", error)
             self.view.hideLoader()
-            self.view.showMessage(message: "")
+            self.view.showMessage(message: "generic_error".localized())
         })
     }
 
     func savePersonModel() {
+        if !personModel.isValidData() {
+            view.showMessage(message: "Please complete all fields")
+            return
+        }
         view.showLoader()
         personalDataService.savePersonalData(
             personModel: personModel,
             onSucces: {
                 AppLogger.i(self.tag, "Save Person Model")
+                self.backUpPersonModel = PersonModel(firstName: self.personModel.firstName, lastName: self.personModel.lastName, dateBirth: self.personModel.birthDate)
                 self.view.hideLoader()
+                self.view.showMessage(message: "save_person_data_success".localized())
         }, onError: { (error) in
             AppLogger.e(self.tag, "Error when try to save PersonModel", error)
             self.view.hideLoader()
-            self.view.showMessage(message: "")
+            self.view.showMessage(message: "generic_error".localized())
         })
     }
 
@@ -81,5 +89,27 @@ class PersonalDataFormPresenter {
         }
 
         return String()
+    }
+
+    func checkModelAfterLogOut() {
+        if !personModel.isValidData() ||
+            hasPersonModelChange() {
+            self.view.showConfimationPopUp()
+
+            return
+        }
+
+        self.view.logOut()
+    }
+
+    private func hasPersonModelChange() -> Bool {
+        if personModel.firstName != backUpPersonModel.firstName ||
+           personModel.lastName != backUpPersonModel.lastName ||
+           personModel.birthDate != backUpPersonModel.birthDate {
+
+            return true
+        }
+
+        return false
     }
 }

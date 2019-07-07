@@ -11,7 +11,6 @@
 		93E75F0350EB5D52B8D1938C /* Pods_InterCorpLoginTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C211981F16F2F08A8A8C94C1 /* Pods_InterCorpLoginTests.framework */; };
 		A875571022CFDEA4003B8E12 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875570F22CFDEA4003B8E12 /* LoginViewController.swift */; };
 		A875571322CFE22E003B8E12 /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875571222CFE22E003B8E12 /* AppLogger.swift */; };
-		A875571622CFE78B003B8E12 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875571522CFE78B003B8E12 /* LoginPresenter.swift */; };
 		A875571822CFE7F9003B8E12 /* LoginViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875571722CFE7F9003B8E12 /* LoginViewControllerProtocol.swift */; };
 		A8C620DB22CF956900DFEF2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C620DA22CF956900DFEF2A /* AppDelegate.swift */; };
 		A8C620E022CF956900DFEF2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8C620DE22CF956900DFEF2A /* Main.storyboard */; };
@@ -35,6 +34,7 @@
 		D406076B22D1633E00B1F05C /* TextFieldCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406076922D1633E00B1F05C /* TextFieldCellView.swift */; };
 		D406076C22D1633E00B1F05C /* TextFieldCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D406076A22D1633E00B1F05C /* TextFieldCellView.xib */; };
 		D406076E22D251FB00B1F05C /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406076D22D251FB00B1F05C /* ColorExtension.swift */; };
+		D406077022D28EB800B1F05C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406076F22D28EB800B1F05C /* Constants.swift */; };
 		FDCB454D71BA901167D1D9A3 /* Pods_InterCorpLoginUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD03E432842B46FA78AC306D /* Pods_InterCorpLoginUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,7 +63,6 @@
 		99FF8ADD1C6127E9BEDE7B20 /* Pods_InterCorpLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterCorpLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A875570F22CFDEA4003B8E12 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A875571222CFE22E003B8E12 /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
-		A875571522CFE78B003B8E12 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		A875571722CFE7F9003B8E12 /* LoginViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerProtocol.swift; sourceTree = "<group>"; };
 		A8C620D722CF956900DFEF2A /* InterCorpLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterCorpLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8C620DA22CF956900DFEF2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +98,7 @@
 		D406076922D1633E00B1F05C /* TextFieldCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCellView.swift; sourceTree = "<group>"; };
 		D406076A22D1633E00B1F05C /* TextFieldCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCellView.xib; sourceTree = "<group>"; };
 		D406076D22D251FB00B1F05C /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		D406076F22D28EB800B1F05C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F5CFAA1BE6B58596C59A3536 /* Pods-InterCorpLoginTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterCorpLoginTests.release.xcconfig"; path = "Target Support Files/Pods-InterCorpLoginTests/Pods-InterCorpLoginTests.release.xcconfig"; sourceTree = "<group>"; };
 		FD03E432842B46FA78AC306D /* Pods_InterCorpLoginUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterCorpLoginUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD84651D725DB0CC51E6B6DD /* Pods-InterCorpLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterCorpLogin.debug.xcconfig"; path = "Target Support Files/Pods-InterCorpLogin/Pods-InterCorpLogin.debug.xcconfig"; sourceTree = "<group>"; };
@@ -167,7 +167,6 @@
 		A875570C22CFDE17003B8E12 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				A875571422CFE778003B8E12 /* Presenter */,
 				A875570E22CFDE78003B8E12 /* ViewController */,
 			);
 			path = Login;
@@ -194,16 +193,9 @@
 			isa = PBXGroup;
 			children = (
 				A875571222CFE22E003B8E12 /* AppLogger.swift */,
+				D406076F22D28EB800B1F05C /* Constants.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		A875571422CFE778003B8E12 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				A875571522CFE78B003B8E12 /* LoginPresenter.swift */,
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 		A8C620CE22CF956900DFEF2A = {
@@ -612,10 +604,10 @@
 				A8C620DB22CF956900DFEF2A /* AppDelegate.swift in Sources */,
 				A875571322CFE22E003B8E12 /* AppLogger.swift in Sources */,
 				D406073C22D1291400B1F05C /* PersonalDataFormViewControllerProtocol.swift in Sources */,
-				A875571622CFE78B003B8E12 /* LoginPresenter.swift in Sources */,
 				D406075B22D158C200B1F05C /* CalendarCellView.swift in Sources */,
 				D406074722D130A100B1F05C /* StringExtension.swift in Sources */,
 				D406074522D12CB400B1F05C /* PersonalDataServiceProtocol.swift in Sources */,
+				D406077022D28EB800B1F05C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

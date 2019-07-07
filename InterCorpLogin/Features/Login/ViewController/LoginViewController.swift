@@ -20,7 +20,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        hideLoader()
         if let token = AccessToken.current?.tokenString {
             showLoader()
             let credential = FacebookAuthProvider.credential(withAccessToken: token)
@@ -40,6 +39,7 @@ class LoginViewController: UIViewController {
             self.hideLoader()
             if let error = error {
                 AppLogger.e(self.tag, "Error when try to login in Firebase", error)
+                self.alertView(with: "generic_error".localized())
                 return
             }
             self.performSegue(withIdentifier: "formSegue", sender: nil)
@@ -69,6 +69,7 @@ extension LoginViewController: LoginButtonDelegate {
     func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
         if let error = error {
             AppLogger.e(tag, "Error when try to login in facebook", error)
+            self.alertView(with: "generic_error".localized())
             return
         }
 

@@ -26,7 +26,7 @@ class PersonDataFormViewController: UITableViewController {
         self.tableView.register(UINib(nibName: calendarCellIdentifier, bundle: nil), forCellReuseIdentifier: calendarCellIdentifier)
         self.tableView.register(UINib(nibName: textFieldCellIdentifier, bundle: nil), forCellReuseIdentifier: textFieldCellIdentifier)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(updateAgeCell), name: Notification.Name("birthDateChange"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateAgeCell), name: Notification.Name(Constants.updateEageNotificationName), object: nil)
 
         // Presenter Set Up
         self.presenter = PersonalDataFormPresenter(view: self, personalDataService: PersonalDataService())
@@ -79,9 +79,7 @@ class PersonDataFormViewController: UITableViewController {
     }
 
     @IBAction func logOutButtonAction(_ sender: Any) {
-        let loginManager = LoginManager()
-        loginManager.logOut()
-        dismiss(animated: true, completion: nil)
+        presenter.checkModelAfterLogOut()
     }
 
     @IBAction func saveItemAction(_ sender: Any) {
@@ -93,7 +91,7 @@ class PersonDataFormViewController: UITableViewController {
     }
 
     deinit {
-        NotificationCenter.default.removeObserver(self, name: Notification.Name("birthDateChange"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: Notification.Name(Constants.updateEageNotificationName), object: nil)
     }
 }
 
@@ -112,14 +110,25 @@ extension PersonDataFormViewController: PersonalDataFormViewControllerProtocol {
     }
 
     func hideLoader() {
-        DispatchQueue.main.async {
-            self.removeSpinner(view: self.view)
-        }
+        self.removeSpinner(view: self.view)
     }
 
     func showMessage(message: String) {
-        DispatchQueue.main.async {
+        self.alertView(with: message)
+    }
 
+    func showConfimationPopUp() {
+        self.alertView(withButtonActions: "save_person_data_confimation".localized(), actionLeftButton: {
+        }) {
+            self.logOut()
+        }
+    }
+
+    func logOut() {
+        DispatchQueue.main.async {
+            let loginManager = LoginManager()
+            loginManager.logOut()
+            self.dismiss(animated: true, completion: nil)
         }
     }
 }
