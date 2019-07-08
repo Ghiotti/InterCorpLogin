@@ -21,7 +21,8 @@ class PersonDataFormViewController: UITableViewController {
         // Tableview setUp
         self.tableView.delegate = self
         self.tableView.rowHeight = 75
-
+        self.tableView.sectionFooterHeight = 150
+        
         // Cell registration
         self.tableView.register(UINib(nibName: calendarCellIdentifier, bundle: nil), forCellReuseIdentifier: calendarCellIdentifier)
         self.tableView.register(UINib(nibName: textFieldCellIdentifier, bundle: nil), forCellReuseIdentifier: textFieldCellIdentifier)
@@ -31,6 +32,10 @@ class PersonDataFormViewController: UITableViewController {
         // Presenter Set Up
         self.presenter = PersonalDataFormPresenter(view: self, personalDataService: PersonalDataService())
         presenter.start()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name(Constants.updateEageNotificationName), object: nil)
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -42,6 +47,10 @@ class PersonDataFormViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.numberOfRows()
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return addFooterButton()
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -59,9 +68,21 @@ class PersonDataFormViewController: UITableViewController {
     @objc private func updateAgeCell() {
         tableView.reloadRows(at: [IndexPath(row: 3, section: 0)], with: .none)
     }
-
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: Notification.Name(Constants.updateEageNotificationName), object: nil)
+    
+    func addFooterButton() -> UIView {
+        let customView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 100))
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width - 32, height: 50))
+        button.setTitle("Save", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.layer.cornerRadius = 23
+        button.backgroundColor = UIColor.white
+        button.setTitleColor(UIColor.colorPrimary, for: .normal)
+        button.layer.borderColor = UIColor.colorPrimary.cgColor
+        button.layer.borderWidth = 2
+        button.addTarget(self, action: #selector(saveItemAction(_:)), for: .touchUpInside)
+        customView.addSubview(button)
+        button.center = customView.center
+        return customView
     }
 }
 
@@ -102,5 +123,3 @@ extension PersonDataFormViewController: PersonalDataFormViewControllerProtocol {
         }
     }
 }
-
-
