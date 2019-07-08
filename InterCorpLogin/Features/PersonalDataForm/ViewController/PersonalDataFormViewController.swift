@@ -72,7 +72,7 @@ class PersonDataFormViewController: UITableViewController {
     func addFooterButton() -> UIView {
         let customView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 100))
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width - 32, height: 50))
-        button.setTitle("Save", for: .normal)
+        button.setTitle("option_save".localized(), for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.layer.cornerRadius = 23
         button.backgroundColor = UIColor.white
