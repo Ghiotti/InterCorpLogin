@@ -34,50 +34,20 @@ class PersonDataFormViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCellIdentifier, for: indexPath) as? TextFieldCellView else {
-                return UITableViewCell()
-            }
-
-            cell.render(personModel: presenter.getPersonModel(), placeHolder: "personal_data_first_mame".localized(), maxCount: 10, minCount: 1, row: indexPath.row)
-
-            return cell
-
-        case 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCellIdentifier, for: indexPath) as? TextFieldCellView else {
-                return UITableViewCell()
-            }
-
-            cell.render(personModel: presenter.getPersonModel(), placeHolder: "personal_data_last_name".localized(), maxCount: 10, minCount: 1, row: indexPath.row)
-
-            return cell
-
-        case 2:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: calendarCellIdentifier, for: indexPath) as? CalendarCellView else {
-                return UITableViewCell()
-            }
-
-            cell.render(personModel: presenter.getPersonModel(), placeHolder: "personal_data_birth_date".localized())
-
-            return cell
-        case 3:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCellIdentifier, for: indexPath) as? TextFieldCellView else {
-                return UITableViewCell()
-            }
-
-            cell.render(personModel: presenter.getPersonModel(), placeHolder: "personal_data_birth_age".localized(), maxCount: 10, minCount: 1, row: indexPath.row)
-
-            return cell
-        default:
-            return UITableViewCell()
-        }
+        let identifier = presenter.identifierForCell(row: indexPath.row)
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        presenter.setUpCell(cell: cell as! PersonalDataCellProtocol, row: indexPath.row)
+        return cell
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.numberOfRows()
     }
-
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
     @IBAction func logOutButtonAction(_ sender: Any) {
         presenter.checkModelAfterLogOut()
     }
@@ -105,12 +75,12 @@ extension PersonDataFormViewController: PersonalDataFormViewControllerProtocol {
 
     func showLoader() {
         DispatchQueue.main.async {
-            self.showSpinner(onView: self.view)
+            self.showSpinner(onView: self.navigationController!.view)
         }
     }
 
     func hideLoader() {
-        self.removeSpinner(view: self.view)
+        self.removeSpinner(view: self.navigationController!.view)
     }
 
     func showMessage(message: String) {
