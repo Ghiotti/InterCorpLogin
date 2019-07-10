@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
         // FacebookLoginButoon
         loginFacebookButton.delegate = self
         loginFacebookButton.permissions = ["email"]
-        loginFacebookButton.setAttributedTitle(NSAttributedString(string: "Login with Facebook"), for: .normal)
+        loginFacebookButton.setAttributedTitle(NSAttributedString(string: "Facebook"), for: .normal)
     }
 
     private func loginWithFirebase(credential: AuthCredential) {
