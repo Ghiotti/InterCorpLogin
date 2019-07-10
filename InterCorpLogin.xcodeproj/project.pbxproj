@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,8 @@
 		A875571022CFDEA4003B8E12 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875570F22CFDEA4003B8E12 /* LoginViewController.swift */; };
 		A875571322CFE22E003B8E12 /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875571222CFE22E003B8E12 /* AppLogger.swift */; };
 		A875571822CFE7F9003B8E12 /* LoginViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875571722CFE7F9003B8E12 /* LoginViewControllerProtocol.swift */; };
+		A8C3DEEA22D385AB006F04C9 /* PersonalDataCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C3DEE922D385AB006F04C9 /* PersonalDataCellPresenter.swift */; };
+		A8C3DEED22D38BFD006F04C9 /* PersonalDataCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C3DEEC22D38BFD006F04C9 /* PersonalDataCellProtocol.swift */; };
 		A8C620DB22CF956900DFEF2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C620DA22CF956900DFEF2A /* AppDelegate.swift */; };
 		A8C620E022CF956900DFEF2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8C620DE22CF956900DFEF2A /* Main.storyboard */; };
 		A8C620E222CF956B00DFEF2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8C620E122CF956B00DFEF2A /* Assets.xcassets */; };
@@ -64,6 +66,8 @@
 		A875570F22CFDEA4003B8E12 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A875571222CFE22E003B8E12 /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
 		A875571722CFE7F9003B8E12 /* LoginViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerProtocol.swift; sourceTree = "<group>"; };
+		A8C3DEE922D385AB006F04C9 /* PersonalDataCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataCellPresenter.swift; sourceTree = "<group>"; };
+		A8C3DEEC22D38BFD006F04C9 /* PersonalDataCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataCellProtocol.swift; sourceTree = "<group>"; };
 		A8C620D722CF956900DFEF2A /* InterCorpLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterCorpLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8C620DA22CF956900DFEF2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8C620DF22CF956900DFEF2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -198,6 +202,26 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		A8C3DEE822D38444006F04C9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A8C3DEE922D385AB006F04C9 /* PersonalDataCellPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A8C3DEEB22D385C5006F04C9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D406076922D1633E00B1F05C /* TextFieldCellView.swift */,
+				D406076A22D1633E00B1F05C /* TextFieldCellView.xib */,
+				D406075A22D158C200B1F05C /* CalendarCellView.swift */,
+				D406075C22D158DE00B1F05C /* CalendarCellView.xib */,
+				A8C3DEEC22D38BFD006F04C9 /* PersonalDataCellProtocol.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A8C620CE22CF956900DFEF2A = {
 			isa = PBXGroup;
 			children = (
@@ -315,10 +339,8 @@
 		D406075922D1589D00B1F05C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				D406076922D1633E00B1F05C /* TextFieldCellView.swift */,
-				D406076A22D1633E00B1F05C /* TextFieldCellView.xib */,
-				D406075A22D158C200B1F05C /* CalendarCellView.swift */,
-				D406075C22D158DE00B1F05C /* CalendarCellView.xib */,
+				A8C3DEEB22D385C5006F04C9 /* View */,
+				A8C3DEE822D38444006F04C9 /* Presenter */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -488,16 +510,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-InterCorpLogin/Pods-InterCorpLogin-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-InterCorpLogin/Pods-InterCorpLogin-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-InterCorpLogin/Pods-InterCorpLogin-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -554,30 +571,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-InterCorpLogin/Pods-InterCorpLogin-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
-				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-InterCorpLogin/Pods-InterCorpLogin-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-InterCorpLogin/Pods-InterCorpLogin-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -593,6 +591,7 @@
 			files = (
 				D406073322D126D700B1F05C /* PersonalDataFormViewController.swift in Sources */,
 				D406075F22D15BDC00B1F05C /* DateExtension.swift in Sources */,
+				A8C3DEED22D38BFD006F04C9 /* PersonalDataCellProtocol.swift in Sources */,
 				A875571822CFE7F9003B8E12 /* LoginViewControllerProtocol.swift in Sources */,
 				D406073E22D129A300B1F05C /* PersonModel.swift in Sources */,
 				A875571022CFDEA4003B8E12 /* LoginViewController.swift in Sources */,
@@ -603,6 +602,7 @@
 				D406073A22D128EA00B1F05C /* PersonalDataFormPresenter.swift in Sources */,
 				A8C620DB22CF956900DFEF2A /* AppDelegate.swift in Sources */,
 				A875571322CFE22E003B8E12 /* AppLogger.swift in Sources */,
+				A8C3DEEA22D385AB006F04C9 /* PersonalDataCellPresenter.swift in Sources */,
 				D406073C22D1291400B1F05C /* PersonalDataFormViewControllerProtocol.swift in Sources */,
 				D406075B22D158C200B1F05C /* CalendarCellView.swift in Sources */,
 				D406074722D130A100B1F05C /* StringExtension.swift in Sources */,

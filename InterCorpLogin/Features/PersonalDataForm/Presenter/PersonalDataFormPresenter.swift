@@ -15,6 +15,8 @@ class PersonalDataFormPresenter {
     private var personModel = PersonModel()
     private var backUpPersonModel = PersonModel()
     private var tag = String(describing: PersonalDataFormPresenter.self)
+    private let calendarCellIdentifier = String(describing: CalendarCellView.self)
+    private let textFieldCellIdentifier = String(describing: TextFieldCellView.self)
 
     init(view: PersonalDataFormViewControllerProtocol, personalDataService: PersonalDataServiceProtocol) {
         self.view = view
@@ -44,6 +46,7 @@ class PersonalDataFormPresenter {
             view.showMessage(message: "Please complete all fields")
             return
         }
+        
         view.showLoader()
         personalDataService.savePersonalData(
             personModel: personModel,
@@ -77,7 +80,6 @@ class PersonalDataFormPresenter {
                 if let lastName = personModel.lastName {
                     return lastName
                 }
-
             case 2:
                 if let dateBirth = personModel.birthDate {
                     return dateBirth
@@ -101,6 +103,18 @@ class PersonalDataFormPresenter {
 
         self.view.logOut()
     }
+    
+    func identifierForCell(row: Int) -> String {
+        if row == 2 {
+            return calendarCellIdentifier
+        }
+        
+        return textFieldCellIdentifier
+    }
+    
+    func setUpCell(cell: PersonalDataCellProtocol, row: Int) {
+        cell.render(personModel: personModel, placeHolder: placeHolderForCell(row: row) , maxCount: 10, minCount: 1, row: row)
+    }
 
     private func hasPersonModelChange() -> Bool {
         if personModel.firstName != backUpPersonModel.firstName ||
@@ -111,5 +125,20 @@ class PersonalDataFormPresenter {
         }
 
         return false
+    }
+    
+    private func placeHolderForCell(row: Int) -> String {
+        switch row {
+            case 0:
+                return "personal_data_first_mame".localized()
+            case 1:
+                return "personal_data_last_name".localized()
+            case 2:
+                return "personal_data_birth_date".localized()
+            case 3:
+                return "personal_data_birth_age".localized()
+            default:
+                return String()
+        }
     }
 }

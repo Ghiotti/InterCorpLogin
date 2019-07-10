@@ -9,7 +9,9 @@
 import UIKit
 import Material
 
-class CalendarCellView: UITableViewCell {
+class CalendarCellView: UITableViewCell, PersonalDataCellProtocol {
+
+    
 
     @IBOutlet weak var calendarTextField: TextField!
     let datePicker = UIDatePicker()
@@ -19,9 +21,9 @@ class CalendarCellView: UITableViewCell {
         showDatePicker()
     }
 
-    func render(personModel: PersonModel, placeHolder: String) {
+    func render(personModel: PersonModel, placeHolder: String, maxCount: Int, minCount: Int, row: Int) {
         self.personModel = personModel
-        calendarTextField.text = ""
+        calendarTextField.text = String()
         calendarTextField.placeholder = placeHolder
         calendarTextField.font = UIFont.systemFont(ofSize: 15)
         calendarTextField.delegate = self
@@ -62,10 +64,10 @@ extension CalendarCellView: UITextFieldDelegate {
     }
 
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-            if (textField.text?.isEmpty)! || textField.text == nil {
-                calendarTextField.detailLabel.textColor = UIColor.red
-            } else {
-                calendarTextField.detail = ""
-            }
+        if (textField.text?.isEmpty)! || textField.text == nil {
+            calendarTextField.detailLabel.textColor = UIColor.red
+        } else {
+            calendarTextField.detail = String()
+        }
     }
 }

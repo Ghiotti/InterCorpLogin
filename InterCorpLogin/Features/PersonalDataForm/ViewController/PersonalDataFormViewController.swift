@@ -21,7 +21,8 @@ class PersonDataFormViewController: UITableViewController {
         // Tableview setUp
         self.tableView.delegate = self
         self.tableView.rowHeight = 75
-
+        self.tableView.sectionFooterHeight = 150
+        
         // Cell registration
         self.tableView.register(UINib(nibName: calendarCellIdentifier, bundle: nil), forCellReuseIdentifier: calendarCellIdentifier)
         self.tableView.register(UINib(nibName: textFieldCellIdentifier, bundle: nil), forCellReuseIdentifier: textFieldCellIdentifier)
@@ -32,52 +33,30 @@ class PersonDataFormViewController: UITableViewController {
         self.presenter = PersonalDataFormPresenter(view: self, personalDataService: PersonalDataService())
         presenter.start()
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name(Constants.updateEageNotificationName), object: nil)
+    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCellIdentifier, for: indexPath) as? TextFieldCellView else {
-                return UITableViewCell()
-            }
-
-            cell.render(personModel: presenter.getPersonModel(), placeHolder: "personal_data_first_mame".localized(), maxCount: 10, minCount: 1, row: indexPath.row)
-
-            return cell
-
-        case 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCellIdentifier, for: indexPath) as? TextFieldCellView else {
-                return UITableViewCell()
-            }
-
-            cell.render(personModel: presenter.getPersonModel(), placeHolder: "personal_data_last_name".localized(), maxCount: 10, minCount: 1, row: indexPath.row)
-
-            return cell
-
-        case 2:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: calendarCellIdentifier, for: indexPath) as? CalendarCellView else {
-                return UITableViewCell()
-            }
-
-            cell.render(personModel: presenter.getPersonModel(), placeHolder: "personal_data_birth_date".localized())
-
-            return cell
-        case 3:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCellIdentifier, for: indexPath) as? TextFieldCellView else {
-                return UITableViewCell()
-            }
-
-            cell.render(personModel: presenter.getPersonModel(), placeHolder: "personal_data_birth_age".localized(), maxCount: 10, minCount: 1, row: indexPath.row)
-
-            return cell
-        default:
-            return UITableViewCell()
-        }
+        let identifier = presenter.identifierForCell(row: indexPath.row)
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        presenter.setUpCell(cell: cell as! PersonalDataCellProtocol, row: indexPath.row)
+        return cell
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.numberOfRows()
     }
-
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return addFooterButton()
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
     @IBAction func logOutButtonAction(_ sender: Any) {
         presenter.checkModelAfterLogOut()
     }
@@ -89,9 +68,21 @@ class PersonDataFormViewController: UITableViewController {
     @objc private func updateAgeCell() {
         tableView.reloadRows(at: [IndexPath(row: 3, section: 0)], with: .none)
     }
-
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: Notification.Name(Constants.updateEageNotificationName), object: nil)
+    
+    func addFooterButton() -> UIView {
+        let customView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 100))
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width - 32, height: 50))
+        button.setTitle("option_save".localized(), for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.layer.cornerRadius = 23
+        button.backgroundColor = UIColor.white
+        button.setTitleColor(UIColor.colorPrimary, for: .normal)
+        button.layer.borderColor = UIColor.colorPrimary.cgColor
+        button.layer.borderWidth = 2
+        button.addTarget(self, action: #selector(saveItemAction(_:)), for: .touchUpInside)
+        customView.addSubview(button)
+        button.center = customView.center
+        return customView
     }
 }
 
@@ -105,12 +96,12 @@ extension PersonDataFormViewController: PersonalDataFormViewControllerProtocol {
 
     func showLoader() {
         DispatchQueue.main.async {
-            self.showSpinner(onView: self.view)
+            self.showSpinner(onView: self.navigationController!.view)
         }
     }
 
     func hideLoader() {
-        self.removeSpinner(view: self.view)
+        self.removeSpinner(view: self.navigationController!.view)
     }
 
     func showMessage(message: String) {
@@ -132,5 +123,3 @@ extension PersonDataFormViewController: PersonalDataFormViewControllerProtocol {
         }
     }
 }
-
-
